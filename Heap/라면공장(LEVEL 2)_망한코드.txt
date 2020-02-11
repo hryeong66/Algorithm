@@ -1,0 +1,29 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int stock, vector<int> dates, vector<int> supplies, int k) {
+    int answer = 0;
+    //마지막 날짜도 넣어줌
+    dates.push_back(k);
+    
+    for(int i = 0; i < dates.size()-1; i++){
+        //date 날짜가 되었을 때 남은 stock 계산
+        if(i == 0){
+            stock = stock - dates[i];
+        }else {
+            stock = stock - (dates[i] - dates[i-1]);  
+        }
+        
+        //현재 stock으로 다음 공급날짜까지 버틸 수 있는지 확인
+        if(stock < dates[i+1] - dates[i]){
+            //현재 stock으로 다음 날짜까지 버틸 수 없으니까 이번에 무조건 받아야함
+            stock = stock + supplies[i];
+            answer++;
+        }
+        
+    }
+
+    return answer;
+}
