@@ -24,6 +24,9 @@ def sol(num):
 
 sol(5)
     
+# 3중 포문을 돌려도 되는 이유
+# 최대 24*60*60 => 86400
+# 1초에 2000만번까지 가능
 def solution(num):
     count = 0
     for i in range(int(num)+1):

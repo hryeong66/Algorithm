@@ -41,7 +41,6 @@ def solution(n, point_str):
     
     print(x, y)
     
-        
 solution(5, "R R R U D D")
 
 

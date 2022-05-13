@@ -15,18 +15,12 @@ def sol(start):
     result = 0
     nx, ny = 0,0
 
-    for step in steps:
-        nx = x + step[0]
-
-
     for i in range(len(dx)):
         nx = x + dx[i]
         ny = y + dy[i]
         if nx >= 0 and ny >= 0 and nx <= 8 and ny <= 8: 
             result += 1
             print(nx, ny)
-    
     print(result)
 
-sol('d3')
     
